@@ -45,6 +45,8 @@
     LC_TIME = "es_DO.UTF-8";
   };
   
+  programs.nix-ld.enable = true;
+
   # Configure keymap in X11
   services = {
   	xserver = {
@@ -68,6 +70,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
+
+  fonts.packages = with pkgs; [
+    fantasque-sans-mono
+  ];
 
   # Enable automatic login for the user.
   services.getty.autologinUser = "ruben";
